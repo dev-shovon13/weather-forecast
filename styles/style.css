@@ -1,0 +1,11 @@
+body {
+    background-image: url(../images/bg-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+#info {
+    /* background-image: linear-gradient(rgba(120, 200, 120, 0.3), rgba(120, 200, 120, 0.3)); */
+    display: none;
+}
