@@ -3,6 +3,7 @@ const weather = () => {
     const cityValue = cityInput.value
     const apiKey = '9d873e004a20029c47d707094274e72c'
     const api = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${apiKey}`
+    console.log(api);
     cityInput.value = ""
     if (cityValue == "" || !isNaN(cityValue)) {
         alert("Please Give A City Name")
@@ -18,10 +19,13 @@ const showWeather = (data) => {
 
     const cityName = document.getElementById("city")
     const cityTemp = document.getElementById("temp")
+    const cityHumidity = document.getElementById("humidity")
     const citySky = document.getElementById("forecast")
     const weatherType = document.getElementById("weather-img")
     cityName.textContent = data.name
-    cityTemp.textContent = `${parseFloat(data.main.temp - 273.15).toFixed(2)}°C`
+    // cityTemp.textContent = `${parseFloat(data.main.temp - 273.15).toFixed(2)}°C`
+    cityTemp.textContent = `${Math.ceil(data.main.temp - 273.15)}°C`
+    cityHumidity.textContent = `Humidity: ${data.main.humidity}% `
     citySky.textContent = data.weather[0].main
     weatherType.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
 

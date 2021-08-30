@@ -18,16 +18,19 @@
 
     <main class="container">
         <div class="w-50 mx-auto mt-5 py-5">
-            <div class="input-group mb-5">
-                <input id="city-input" type="text" class="form-control" placeholder="Enter a Location for Weather">
-                <button onclick="weather()" class="btn btn-danger" type="button" id="button-addon2">Search</button>
+            <div class="input-group mb-2 row g-1">
+                <input id="city-input" type="text" class="form-control rounded col-md-9 col-lg-10"
+                    placeholder="Enter a City Name">
+                <button onclick="weather()" class="btn btn-danger rounded col-md-3 col-lg-2" type="button"
+                    id="button-addon2">Search</button>
             </div>
-            <div id="info" class="text-center text-white py-4 rounded-3">
+            <div id="info" class="text-center text-white rounded-3 pb-4">
                 <!-- way 1 -->
 
                 <img id="weather-img" src="">
                 <h1 id="city"></h1>
-                <h3><span id="temp"></span></h3>
+                <h3 id="temp"></h3>
+                <h5 id="humidity"></h5>
                 <h5 id="forecast" class="fw-light"></h5>
             </div>
         </div>
