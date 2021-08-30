@@ -4,10 +4,14 @@ const weather = () => {
     const apiKey = '9d873e004a20029c47d707094274e72c'
     const api = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${apiKey}`
     cityInput.value = ""
-    document.querySelector("#info").style.display = "block"
-    fetch(api)
-        .then(res => res.json())
-        .then(data => showWeather(data))
+    if (cityValue == "" || !isNaN(cityValue)) {
+        alert("Please Give A City Name")
+    } else {
+        document.querySelector("#info").style.display = "block"
+        fetch(api)
+            .then(res => res.json())
+            .then(data => showWeather(data))
+    }
 }
 const showWeather = (data) => {
     // way 1
